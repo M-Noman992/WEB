@@ -1,0 +1,47 @@
+$font-family: Arial, sans-serif;
+
+@mixin breakpoint($point) {
+    @if $point == mobile {
+        @media (max-width: 600px) {
+            @content;
+        }
+    }
+}
+
+body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+
+    header {
+        padding: 2em 0;
+        text-align: center;
+    }
+
+    .about-me {
+        padding: 40px;
+        margin: 50px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+        h2 {
+            // Removed color property
+        }
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+@include breakpoint(mobile) {
+    .about-me {
+        margin: 20px;
+        padding: 30px;
+    }
+}
